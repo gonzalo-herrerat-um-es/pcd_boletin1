@@ -86,7 +86,12 @@ def test_movimiento_columna_fuera_tablero(tablero_dimension, movimientos_vacios)
     y = tablero_dimension + 1
     assert not movimiento_valido(tablero_dimension, x, y, movimientos_otro_jugador)
 
-
+def test_movimiento_fila_fuera_tablero(tablero_dimension, movimientos_vacios):
+    movimientos_otro_jugador, _ = movimientos_vacios
+    y = 1
+    x = tablero_dimension + 1
+    assert not movimiento_valido(tablero_dimension, x, y, movimientos_otro_jugador)
+    
 def test_movimiento_fila_y_columna_fuera_tablero(tablero_dimension, movimientos_vacios, movimientos_fuera_tablero):
     movimientos_otro_jugador, _ = movimientos_vacios
     x, y = movimientos_fuera_tablero
